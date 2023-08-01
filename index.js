@@ -11,7 +11,7 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 /* cors error handle */
 const corsOptions = {
-  origin: ["http://localhost:3000"],
+  origin: ["http://localhost:3000", "https://dream-build.onrender.com"],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
@@ -28,6 +28,7 @@ app.use("/", secureRoutes);
 // base API
 app.get("/", (req, res) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Origin", "https://dream-build.onrender.com");
   res.send("Hello server is ready !");
 });
 
